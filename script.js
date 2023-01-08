@@ -44,3 +44,9 @@ btn_option[0].textContent='Grey-Black';
 btn_option[1].textContent='Rainbow';
 btn_option[2].textContent='Eraser';
 btn_option[3].textContent='Clear';
+
+// add hover class to the buttons
+const btn_list=document.querySelectorAll('button');
+btn_list.forEach((btn)=> {
+    btn.classList.add('hover');
+})
