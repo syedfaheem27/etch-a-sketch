@@ -23,10 +23,24 @@ container_1.appendChild(btn_up);
 container_1.appendChild(btn_down);
 
 const btn_scale=document.querySelectorAll('button');
-console.log(btn_scale)
+
 btn_scale.forEach((btn) => {
     btn.style.cssText='border: 1px solid blue; color: gold; padding: 6px;\
     border-radius: 4px;';
 });
 btn_up.textContent='Scale-up';
 btn_down.textContent='Scale-down';
+
+//adding buttons for various color options and other options like clear and erase
+
+const btn_option=[];
+for(let i=0;i<4;i++) {
+    btn_option[i]=document.createElement('button');
+    btn_option[i].style.cssText='border: 1px solid blue; color: gold; \
+    background-color: bisque; padding: 6px; border-radius: 4px;';
+    btn_container.appendChild(btn_option[i]);
+}
+btn_option[0].textContent='Grey-Black';
+btn_option[1].textContent='Rainbow';
+btn_option[2].textContent='Eraser';
+btn_option[3].textContent='Clear';
