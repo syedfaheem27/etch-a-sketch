@@ -9,7 +9,8 @@ container_1.style.cssText='display: flex; flex-direction: column; justify-conten
 gap: 12px; border: 3px solid red; padding: 12px;';
 
 container_2.style.cssText='box-sizing: border-box; width: 486px; height: 486px;\
-border: 3px solid bisque;'
+border: 3px solid bisque; display: flex; gap: 0; flex-wrap: wrap;\
+align-items: flex-start;';
 
 const btn_container=document.querySelector('.btn_container');
 
@@ -50,3 +51,14 @@ const btn_list=document.querySelectorAll('button');
 btn_list.forEach((btn)=> {
     btn.classList.add('hover');
 })
+
+// adding a grid of default side = 16px
+const div=[];
+function default_start() {
+    for(let i=0;i<(30*30);i++) {
+        div[i]=document.createElement('div');
+        div[i].style.cssText='height: 16px; width: 16px;'
+        container_2.appendChild(div[i]);
+    }
+}
+default_start();
