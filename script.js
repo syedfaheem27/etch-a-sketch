@@ -135,6 +135,76 @@ function scale_up() {
     else return;
 }
 
+function scale_down() {
+    const len_down=div.length;
+    if(len_down==100) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<144;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 38px; height: 38px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==144) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<256;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 28px; height: 28px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==256) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<400;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 22px; height: 22px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==400) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<576;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 18px; height: 18px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==576) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<900;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 14px; height: 14px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==900) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<1600;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 10px; height: 10px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_down==1600) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<3600;i++) {
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 6px; height: 6px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else return;
+
+}
+
 
 
 btn_up.addEventListener('click',scale_up);
+btn_down.addEventListener('click',scale_down);
