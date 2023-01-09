@@ -53,12 +53,88 @@ btn_list.forEach((btn)=> {
 })
 
 // adding a grid of default side = 16px
-const div=[];
+let div=[];
 function default_start() {
     for(let i=0;i<(30*30);i++) {
         div[i]=document.createElement('div');
-        div[i].style.cssText='height: 16px; width: 16px;'
+        div[i].style.cssText='height: 14px; width: 14px; border: 1px solid black;'
         container_2.appendChild(div[i]);
     }
 }
 default_start();
+
+// adding functionalities to the buttons
+function scale_up() {
+    const len_up=div.length;
+    if(len_up==3600){
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<1600;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 10px; height: 10px;'
+            container_2.appendChild(div[i]);
+        }
+        
+    }
+    else if(len_up==1600) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<900;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 14px; height: 14px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    
+    else if(len_up==900) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<576;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 18px; height: 18px;'
+            container_2.appendChild(div[i]);
+        }
+    
+    }
+    else if(len_up==576) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<400;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 22px; height: 22px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_up==400) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<256;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 28px; height: 28px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_up==256) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<144;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 38px; height: 38px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else if(len_up==144) {
+        container_2.innerHTML='';
+        div=[];
+        for(let i=0;i<100;i++){
+            div[i]=document.createElement('div');
+            div[i].style.cssText='border: 1px solid black; width: 46px; height: 46px;'
+            container_2.appendChild(div[i]);
+        }
+    }
+    else return;
+}
+
+
+
+btn_up.addEventListener('click',scale_up);
