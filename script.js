@@ -9,8 +9,8 @@ container_1.style.cssText='display: flex; flex-direction: column; justify-conten
 gap: 12px; border: 3px solid red; padding: 12px;';
 
 container_2.style.cssText='box-sizing: border-box; width: 486px; height: 486px;\
-border: 3px solid bisque; display: flex; gap: 0; flex-wrap: wrap;\
-align-items: flex-start;';
+border: 3px solid black; display: flex; gap: 0; flex-wrap: wrap;\
+align-items: flex-start;  ';
 
 const btn_container=document.querySelector('.btn_container');
 
@@ -44,7 +44,7 @@ for(let i=0;i<4;i++) {
 btn_option[0].textContent='Grey-Black';
 btn_option[1].textContent='Rainbow';
 btn_option[2].textContent='Eraser';
-btn_option[3].textContent='Clear';
+btn_option[3].textContent='Reset';
 
 // add hover class to the buttons
 const btn_list=document.querySelectorAll('button');
@@ -208,3 +208,120 @@ function scale_down() {
 
 btn_up.addEventListener('click',scale_up);
 btn_down.addEventListener('click',scale_down);
+
+const btn=btn_container.querySelectorAll('button');           // btn is a node list of all the buttons that give the user options to pick the color.
+btn.forEach((button)=> {
+    button.addEventListener('click',color_grid);
+});
+
+let counter_black=0;    //this will assist in changing the opacity when the color is black
+let counter_rainbow=0;  //this will assist in changing the colors from red to violet
+  
+function color_grid(e) {
+    const div_list=container_2.querySelectorAll('div');
+    if(e.target.textContent=='Grey-Black'){
+        div_list.forEach((box)=> {
+            box.addEventListener('mouseenter',(e)=> {
+                counter_black+=1;
+                if(counter_black==1){
+                    e.target.style.opacity='0.1';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==2){
+                    e.target.style.opacity='0.2';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==3){
+                    e.target.style.opacity='0.3';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==4){
+                    e.target.style.opacity='0.4';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==5){
+                    e.target.style.opacity='0.5';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==6){
+                    e.target.style.opacity='0.6';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==7){
+                    e.target.style.opacity='0.7';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==8){
+                    e.target.style.opacity='0.8';
+                    e.target.style.backgroundColor='black';
+                }
+                else if(counter_black==9){
+                    e.target.style.opacity='0.9';
+                    e.target.style.backgroundColor='black';
+                }
+                else {
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='black';
+                    counter_black=0;
+                }
+            })
+        })
+    }
+    else if(e.target.textContent=='Rainbow'){
+        div_list.forEach((box)=> {
+            box.addEventListener('mouseenter',(e)=>{
+                counter_rainbow+=1;
+                if(counter_rainbow==1){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor="violet";
+                }
+                else if(counter_rainbow==2){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='indigo';
+                }
+                else if(counter_rainbow==3){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='blue';
+                }
+                else if(counter_rainbow==4){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='green';
+                }
+                else if(counter_rainbow==5){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='yellow';
+                }
+                else if(counter_rainbow==6){
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='orange';
+                }
+                else {
+                    e.target.style.opacity='1';
+                    e.target.style.backgroundColor='red';
+                    counter_rainbow=0;
+                }
+            })
+        })
+    }
+
+    else if(e.target.textContent=='Eraser'){
+        div_list.forEach((box) => {
+            box.addEventListener('mouseenter',(e)=> {
+                e.target.style.opacity='1';
+                e.target.style.backgroundColor='white';
+                
+            })
+        })
+    }
+    else {
+        const dimension=div.length;
+        for(let i=0; i<dimension;i++){
+            div[i].style.opacity='1';
+            div[i].style.backgroundColor='white';
+            div[i].removeEventListener('mouseenter',()=> {
+                console.log('hello');
+            })
+        }
+
+    }
+}
